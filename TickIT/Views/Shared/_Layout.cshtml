@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - TickIT</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+    <!-- Shared styles (tokens, buttons, navbar) -->
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+
+    <!-- Page-specific styles (Landing.css, Login.css, Register.css...) -->
+    @await RenderSectionAsync("Styles", required: false)
+</head>
+<body>
+    @{
+        // Used to highlight the active nav link
+        var action = ViewContext.RouteData.Values["action"]?.ToString() ?? "Landing";
+        string Active(string name) => action == name ? "active" : "";
+    }
+
+    <header class="navbar">
+        <div class="container navbar-inner">
+            <a class="brand" asp-controller="Home" asp-action="Landing" aria-label="TickIT home">
+                <svg width="44" height="40" viewBox="0 0 44 40" aria-hidden="true">
+                    <path d="M4 8a4 4 0 0 1 4-4h28a4 4 0 0 1 4 4v3a4 4 0 0 0 0 8v13a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V19a4 4 0 0 0 0-8z"
+                          fill="#5b2fb0" transform="rotate(-8 22 20)" />
+                    <path d="M14 22v-3a8 8 0 0 1 16 0v3" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" />
+                    <rect x="12" y="21" width="4" height="7" rx="2" fill="#fff" />
+                    <rect x="28" y="21" width="4" height="7" rx="2" fill="#fff" />
+                </svg>
+                <span class="brand-text">Tick<span>IT</span></span>
+            </a>
+
+            <nav class="nav-links" aria-label="Main">
+                <a class="@Active("Landing")" asp-controller="Home" asp-action="Landing">Home</a>
+                <a href="/Home/Landing#features">Features</a>
+                <a class="@Active("About")" asp-controller="Home" asp-action="About">About</a>
+                <a class="@Active("Contact")" asp-controller="Home" asp-action="Contact">Contact</a>
+            </nav>
+
+            <div class="nav-actions">
+                <a class="link-login" asp-controller="Account" asp-action="Login">Login</a>
+                <a class="btn btn-primary" asp-controller="Account" asp-action="Register">Sign Up</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        @RenderBody()
+    </main>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
+
+ 

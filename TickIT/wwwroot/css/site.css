@@ -1,0 +1,152 @@
+/* ===== TickIT design tokens ===== */
+:root {
+    --ink: #2a1768; /* deep purple for headings */
+    --primary: #5b2fb0; /* buttons, accents */
+    --primary-dark: #4a2495;
+    --primary-light: #8a63d9;
+    --tint: #ece6fa; /* icon circles, borders */
+    --hero-bg: #f5f2fc;
+    --body: #4b4668;
+    --white: #fff;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Kumbh Sans", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+    color: var(--body);
+    background: var(--white);
+    line-height: 1.5;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    width: min(1120px, 92%);
+    margin-inline: auto;
+}
+
+:focus-visible {
+    outline: 3px solid var(--primary-light);
+    outline-offset: 3px;
+}
+
+/* ===== Buttons ===== */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    padding: .65rem 1.4rem;
+    border-radius: 8px;
+    font: 600 .95rem/1 "Kumbh Sans", sans-serif;
+    border: 1.5px solid transparent;
+    cursor: pointer;
+    transition: background .15s, color .15s;
+}
+
+.btn-lg {
+    padding: .9rem 1.6rem;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: var(--white);
+}
+
+    .btn-primary:hover {
+        background: var(--primary-dark);
+    }
+
+.btn-outline {
+    background: var(--white);
+    color: var(--primary);
+    border-color: var(--primary);
+}
+
+    .btn-outline:hover {
+        background: var(--tint);
+    }
+
+.btn-white {
+    background: var(--white);
+    color: var(--primary);
+}
+
+    .btn-white:hover {
+        background: var(--tint);
+    }
+
+/* ===== Navbar ===== */
+.navbar {
+    background: var(--white);
+    border-bottom: 1px solid var(--tint);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.navbar-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 68px;
+    gap: 1rem;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+}
+
+.brand-text {
+    font-size: 1.7rem;
+    font-weight: 800;
+    color: var(--ink);
+    letter-spacing: -.5px;
+}
+
+    .brand-text span {
+        color: var(--primary);
+    }
+
+.nav-links {
+    display: flex;
+    gap: 2.2rem;
+}
+
+    .nav-links a {
+        padding: 1.35rem 0;
+        font-weight: 500;
+        color: var(--ink);
+        border-bottom: 3px solid transparent;
+    }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--primary);
+            border-bottom-color: var(--primary);
+        }
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+}
+
+.link-login {
+    font-weight: 700;
+    color: var(--primary);
+}
+
+@media (max-width: 720px) {
+    .nav-links {
+        display: none;
+    }
+    /* add a hamburger toggle later if needed */
+}

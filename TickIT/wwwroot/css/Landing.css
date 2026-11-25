@@ -1,0 +1,205 @@
+﻿/* Landing page styles. Tokens, buttons and navbar live in site.css */
+
+/* ===== Hero ===== */
+.hero {
+    background: var(--hero-bg);
+    padding: 2.5rem 0 3rem;
+}
+
+.hero-inner {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    align-items: center;
+    gap: 2rem;
+}
+
+.eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 0 0 .4rem;
+    font-weight: 600;
+    font-size: .9rem;
+    letter-spacing: .08em;
+    color: var(--primary-light);
+}
+
+.line {
+    display: inline-block;
+    width: 48px;
+    height: 2px;
+    background: var(--primary);
+}
+
+.hero-title {
+    margin: 0;
+    font-size: clamp(3.5rem, 8vw, 5.5rem);
+    line-height: 1;
+    font-weight: 800;
+    color: var(--ink);
+    letter-spacing: -2px;
+}
+
+    .hero-title span {
+        color: var(--primary-light);
+    }
+
+.hero-tagline {
+    margin: .4rem 0 1rem;
+    font-size: clamp(1.6rem, 3.2vw, 2.4rem);
+    font-weight: 800;
+    color: var(--ink);
+}
+
+.hero-sub {
+    max-width: 30rem;
+    font-size: 1.1rem;
+    margin: 0 0 1.6rem;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.hero-art svg {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ===== Features ===== */
+.features {
+    padding: 2rem 0 2.5rem;
+    text-align: center;
+}
+
+.section-title {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 0;
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--ink);
+}
+
+.section-sub {
+    margin: .1rem 0 1.5rem;
+    font-size: .95rem;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.4rem;
+}
+
+.feature-card {
+    padding: 1.4rem 1rem 1.5rem;
+    border: 1.5px solid var(--tint);
+    border-radius: 14px;
+    background: var(--white);
+}
+
+.feature-icon {
+    width: 56px;
+    height: 56px;
+    margin: 0 auto .8rem;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--tint);
+    color: var(--primary);
+}
+
+.feature-card h3 {
+    margin: 0 0 .3rem;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--ink);
+}
+
+.feature-card p {
+    margin: 0 auto;
+    max-width: 14rem;
+    font-size: .9rem;
+}
+
+/* ===== CTA banner ===== */
+.cta-banner {
+    background: linear-gradient(120deg, #3a1d82 0%, #4c27a3 60%, #6a40c4 100%);
+    color: var(--white);
+    padding: 2rem 0;
+}
+
+.cta-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.cta-banner h2 {
+    margin: 0;
+    font-size: 1.6rem;
+    font-weight: 800;
+}
+
+.cta-banner p {
+    margin: .2rem 0 0;
+    opacity: .95;
+}
+
+/* ===== About / Contact pages ===== */
+.page-section {
+    padding: 3rem 0;
+}
+
+.page-title {
+    margin: 0 0 .8rem;
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--ink);
+}
+
+.page-subtitle {
+    margin: 2rem 0 .5rem;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--ink);
+}
+
+.contact-list {
+    padding-left: 1.2rem;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 960px) {
+    .feature-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero-inner {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-art {
+        order: -1;
+        max-width: 420px;
+        margin-inline: auto;
+    }
+}
+
+@media (max-width: 520px) {
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cta-inner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
