@@ -6,55 +6,82 @@
     <link rel="stylesheet" href="~/css/Landing.css" asp-append-version="true" />
 }
 
-<!-- HERO -->
+<!-- ================= HERO ================= -->
 <section class="hero">
     <div class="container hero-inner">
         <div class="hero-copy">
-            <p class="eyebrow"><span class="line"></span>IT HELP DESK AND SUPPORT</p>
-            <h1 class="hero-title">Tick<span>IT</span></h1>
-            <h2 class="hero-tagline">Submit. Track. Get Support.</h2>
-            <p class="hero-sub">
+            <p class="eyebrow load" style="--d:0ms"><span class="line"></span>IT HELP DESK AND SUPPORT</p>
+            <h1 class="hero-title load" style="--d:120ms">Tick<span>IT</span></h1>
+            <h2 class="hero-tagline load" style="--d:240ms">Submit. Track. Get Support.</h2>
+            <p class="hero-sub load" style="--d:360ms">
                 Your one-stop platform for IT support. Create a support ticket,
                 track your request, and get help faster.
             </p>
-            <div class="hero-buttons">
+            <div class="hero-buttons load" style="--d:480ms">
                 <a class="btn btn-primary btn-lg" asp-controller="Account" asp-action="Register">Get Started <span aria-hidden="true">&rarr;</span></a>
                 <a class="btn btn-outline btn-lg" href="#features">Learn More</a>
             </div>
         </div>
 
-        <div class="hero-art" aria-hidden="true">
+
+
+
+        <div class="hero-art load-art" aria-hidden="true">
             <svg viewBox="0 0 520 380" role="img">
-                <path d="M90 90C130 20 260 10 350 40c90 30 150 90 150 170 0 80-90 120-190 120S60 330 40 250C25 190 60 140 90 90z" fill="#e6dff8" />
+                <!-- background blob -->
+                <path class="blob" d="M90 90C130 20 260 10 350 40c90 30 150 90 150 170 0 80-90 120-190 120S60 330 40 250C25 190 60 140 90 90z" fill="#e6dff8" />
+
+                <!-- sparks -->
                 <g stroke="#5b2fb0" stroke-width="5" stroke-linecap="round">
-                    <line x1="388" y1="38" x2="394" y2="62" />
-                    <line x1="415" y1="55" x2="432" y2="40" />
-                    <line x1="425" y1="82" x2="450" y2="80" />
+                    <line class="spark s1" x1="388" y1="38" x2="394" y2="62" />
+                    <line class="spark s2" x1="415" y1="55" x2="432" y2="40" />
+                    <line class="spark s3" x1="425" y1="82" x2="450" y2="80" />
                 </g>
-                <rect x="140" y="55" width="240" height="170" rx="12" fill="#3b2380" />
-                <rect x="152" y="67" width="216" height="146" rx="4" fill="#f1edfc" />
-                <path d="M110 255h300l10 22H100z" fill="#8f7fd1" />
-                <rect x="235" y="255" width="50" height="6" rx="3" fill="#6b58b8" />
+
+                <!-- ground + shadow -->
                 <line x1="40" y1="300" x2="500" y2="300" stroke="#3b2380" stroke-width="3" />
-                <path d="M205 160v-12a55 55 0 0 1 110 0v12" fill="none" stroke="#3b2380" stroke-width="9" stroke-linecap="round" />
-                <rect x="190" y="145" width="22" height="42" rx="10" fill="#3b2380" />
-                <rect x="308" y="145" width="22" height="42" rx="10" fill="#3b2380" />
-                <path d="M319 187v8a16 16 0 0 1-16 16h-18" fill="none" stroke="#3b2380" stroke-width="6" stroke-linecap="round" />
-                <rect x="268" y="205" width="20" height="12" rx="6" fill="#3b2380" />
-                <path d="M50 150a38 38 0 0 1 38-38h30a38 38 0 0 1 38 38v10a38 38 0 0 1-38 38h-6l-14 22-2-22a38 38 0 0 1-48-36z" fill="#3b2380" />
-                <rect x="104" y="128" width="8" height="30" rx="4" fill="#fff" />
-                <circle cx="108" cy="172" r="5" fill="#fff" />
-                <g transform="rotate(8 420 210)">
-                    <rect x="355" y="170" width="130" height="80" rx="10" fill="#fff" stroke="#9b86e0" stroke-width="2" />
-                    <rect x="375" y="195" width="80" height="8" rx="4" fill="#b9a8ec" />
-                    <rect x="375" y="215" width="55" height="8" rx="4" fill="#b9a8ec" />
+                <ellipse class="shadow" cx="260" cy="292" rx="150" ry="7" fill="#3b2380" opacity=".15" />
+
+                <!-- laptop (floats) -->
+
+
+                <g class="laptop">
+                    <rect x="140" y="55" width="240" height="170" rx="12" fill="#3b2380" />
+                    <rect x="152" y="67" width="216" height="146" rx="4" fill="#f1edfc" />
+                    <path d="M110 255h300l10 22H100z" fill="#8f7fd1" />
+                    <rect x="235" y="255" width="50" height="6" rx="3" fill="#6b58b8" />
+                    <path d="M205 160v-12a55 55 0 0 1 110 0v12" fill="none" stroke="#3b2380" stroke-width="9" stroke-linecap="round" />
+                    <rect x="190" y="145" width="22" height="42" rx="10" fill="#3b2380" />
+                    <rect x="308" y="145" width="22" height="42" rx="10" fill="#3b2380" />
+                    <path d="M319 187v8a16 16 0 0 1-16 16h-18" fill="none" stroke="#3b2380" stroke-width="6" stroke-linecap="round" />
+                    <rect x="268" y="205" width="20" height="12" rx="6" fill="#3b2380" />
+                </g>
+
+                <!-- alert bubble (floats) -->
+                <g class="bubble">
+                    <path d="M50 150a38 38 0 0 1 38-38h30a38 38 0 0 1 38 38v10a38 38 0 0 1-38 38h-6l-14 22-2-22a38 38 0 0 1-48-36z" fill="#3b2380" />
+                    <rect x="104" y="128" width="8" height="30" rx="4" fill="#fff" />
+                    <circle cx="108" cy="172" r="5" fill="#fff" />
+                </g>
+
+                <!-- ticket card (floats) -->
+                <g class="ticket">
+                    <g transform="rotate(8 420 210)">
+                        <rect x="355" y="170" width="130" height="80" rx="10" fill="#fff" stroke="#9b86e0" stroke-width="2" />
+                        <rect x="375" y="195" width="80" height="8" rx="4" fill="#b9a8ec" />
+                        <rect x="375" y="215" width="55" height="8" rx="4" fill="#b9a8ec" />
+                    </g>
                 </g>
             </svg>
+
+            <!-- floating status chips -->
+            <div class="chip chip-resolved"><span class="check">&#10003;</span> Issue Resolved</div>
+            <div class="chip chip-progress"><span class="dot"></span> Ticket #1024 &middot; In Progress</div>
         </div>
     </div>
 </section>
 
-<!-- KEY FEATURES -->
+<!-- ================= KEY FEATURES ================= -->
 <section class="features" id="features">
     <div class="container">
         <h2 class="section-title"><span class="line"></span>Key Features</h2>
@@ -71,7 +98,7 @@
 
             <article class="feature-card">
                 <div class="feature-icon">
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 2" /></svg>
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9" /><path class="clock-hand" d="M12 7v5l3 2" /></svg>
                 </div>
                 <h3>Track Your Request</h3>
                 <p>Check the status of your ticket anytime, anywhere.</p>
@@ -87,7 +114,7 @@
 
             <article class="feature-card">
                 <div class="feature-icon">
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5z" /><path d="m8.5 12 2.5 2.5 4.5-5" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" /></svg>
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5z" /><path class="shield-check" d="m8.5 12 2.5 2.5 4.5-5" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" /></svg>
                 </div>
                 <h3>Reliable &amp; Secure</h3>
                 <p>Your data and requests are always protected.</p>
@@ -96,7 +123,43 @@
     </div>
 </section>
 
-<!-- CALL TO ACTION BANNER -->
+<!-- ================= HOW IT WORKS ================= -->
+<section class="how" id="how-it-works">
+    <div class="container">
+        <h2 class="section-title"><span class="line"></span>How It Works</h2>
+        <p class="section-sub">From problem to solution in three simple steps.</p>
+
+        <div class="steps">
+            <article class="step">
+                <div class="step-num">1</div>
+                <h3>Submit a Ticket</h3>
+                <p>Describe your issue, choose a category, and set the priority level.</p>
+            </article>
+            <article class="step">
+                <div class="step-num">2</div>
+                <h3>Get Assigned</h3>
+                <p>Your ticket is assigned to an IT technician who takes ownership of it.</p>
+            </article>
+            <article class="step">
+                <div class="step-num">3</div>
+                <h3>Track &amp; Resolve</h3>
+                <p>Follow every update and read the resolution notes once it is fixed.</p>
+            </article>
+        </div>
+
+        <div class="tracker">
+            <p class="tracker-label">Every ticket moves through clear statuses</p>
+            <ol class="tracker-steps">
+                <li><span class="t-dot"></span><span class="t-name">Open</span></li>
+                <li><span class="t-dot"></span><span class="t-name">In Progress</span></li>
+                <li><span class="t-dot"></span><span class="t-name">Resolved</span></li>
+                <li><span class="t-dot"></span><span class="t-name">Closed</span></li>
+            </ol>
+        </div>
+    </div>
+</section>
+
+<!-- ================= CTA BANNER ================= -->
 <section class="cta-banner">
     <div class="container cta-inner">
         <div>
@@ -106,3 +169,5 @@
         <a class="btn btn-white" asp-controller="Account" asp-action="Register">Sign Up Now <span aria-hidden="true">&rarr;</span></a>
     </div>
 </section>
+
+ 
