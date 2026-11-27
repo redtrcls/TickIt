@@ -11,6 +11,7 @@ body {
     background-color: #F7F6FA;
     color: #29213B;
     min-height: 100vh;
+    overflow: hidden;
 }
 
 /* MAIN CONTAINER */
@@ -18,11 +19,14 @@ body {
     display: flex;
     min-height: 100vh;
     width: 100%;
+    overflow: hidden;
 }
 
 /* LEFT BRAND SECTION */
 .brand-section {
     width: 38%;
+    height: 100vh;
+    flex-shrink: 0;
     background-color: #38216B;
     color: #FFFFFF;
     display: flex;
@@ -112,11 +116,15 @@ body {
 /* RIGHT FORM SECTION */
 .form-section {
     width: 62%;
+    height: 100vh;
+    min-height: 0;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     padding: 30px;
     background-color: #F7F6FA;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .register-card {
